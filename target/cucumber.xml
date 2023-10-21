@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="7.498" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="test" name="Open DsAlgo portal" time="6.978">
+<system-out><![CDATA[
+Given The user opens DS Algo portal link....................................passed
+Then The user should land in DS Algo portal page............................passed
+]]></system-out>
+</testcase>
+</testsuite>
