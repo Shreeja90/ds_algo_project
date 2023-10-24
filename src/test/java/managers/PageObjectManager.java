@@ -1,8 +1,10 @@
 package managers;
-  
+
 import org.openqa.selenium.WebDriver;
 
 import Pages.Homepage;
+import Pages.Register;
+import Pages.Signin;
 
 
 public class PageObjectManager {
@@ -18,6 +20,11 @@ public class PageObjectManager {
 	//private CheckOutPage checkoutPage;
 	
 	//private LoginPage loginPage;
+	
+	private Register registerPage;
+	
+	
+	private Signin signinPage;
 
  
 	
@@ -33,36 +40,14 @@ public class PageObjectManager {
 		return (homePage == null) ? homePage = new Homepage(driver) : homePage;
 
 	}
- 
 	
- 
-	//public ProductsPage getProductListingPage() {
- 
-		//return (productsPage == null) ? productsPage = new ProductsPage(driver) : productsPage;
- 
-	//}
- 
+	public Register getRegisterPage() {
+		
+		return (registerPage == null)? registerPage = new Register(driver): registerPage;
+		
+	}
 	
- 
-//	=public AddToCartPage getAddToCartPage() {
- 
-		//return (addToCartPage == null) ? addToCartPage = new AddToCartPage(driver) : addToCartPage;
- 
-	//}
- 
-	
- 
-	//public CheckOutPage getCheckoutPage() {
- 
-		//return (checkoutPage == null) ? checkoutPage = new CheckOutPage(driver) : checkoutPage;
- 
-	//}
-	
-	//public LoginPage getLoginPage() {
-		 
-		//return (loginPage == null) ? loginPage = new LoginPage(driver) : loginPage;
- 
-	//}
- 
-	
+	public Signin getSigninPage() {
+		return(signinPage == null)? signinPage = new Signin(driver): signinPage;
+	}
 }

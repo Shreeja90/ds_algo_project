@@ -1,6 +1,5 @@
 package dataproviders;
 
-
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -13,7 +12,7 @@ import enums.EnvironmentType;
 public class ConfigFileReader {
 	
 	private Properties properties;
-	private final String propertyFilePath= "/Users/shreeeja/eclipse-workspace/Dsalgo/Configuration.properties";
+	private final String propertyFilePath= "C:\\Users\\rishj\\git\\ds_algo_project\\src\\test\\java\\config\\Configuration.properties";
 
 	
 	public ConfigFileReader(){
@@ -36,7 +35,7 @@ public class ConfigFileReader {
 	public String getDriverPath(){
 		String driverPath = properties.getProperty("driverPath");
 		if(driverPath!= null) return driverPath;
-		else throw new RuntimeException("driverPath not specified in the Configuration.properties file.");		
+		else throw new RuntimeException("driver Path not specified in the Configuration.properties file.");		
 	}
 	
 	public long getImplicitlyWait() {		
@@ -51,11 +50,24 @@ public class ConfigFileReader {
 		else throw new RuntimeException("url not specified in the Configuration.properties file.");
 	}
 	
+	public String getRegisterpageUrl() {
+		String url1 = properties.getProperty("URL");
+		if(url1 != null) return url1;
+		else throw new RuntimeException("URL not specified in the Configuration.properties file.");
+	
+	}
+	
+	public String getSigninpageURL() {
+		String url2 = properties.getProperty("URL2");
+		if(url2 != null) return url2;
+		else throw new RuntimeException("URL not specified in the Configuration.properties file.");
+	}
+	
 	public DriverType getBrowser() {
 		String browserName = properties.getProperty("browser");
-		if(browserName == null || browserName.equals("chrome")) return DriverType.CHROME;
+		if(browserName == null || browserName.equalsIgnoreCase("chrome")) return DriverType.CHROME;
 		else if(browserName.equalsIgnoreCase("firefox")) return DriverType.FIREFOX;
-		else if(browserName.equals("iexplorer")) return DriverType.INTERNETEXPLORER;
+		else if(browserName.equals("msedgedriver")) return DriverType.MSEDGEDRIVER;
 		else if(browserName.equals("safari")) return DriverType.SAFARI;
 		else throw new RuntimeException("Browser Name Key value in Configuration.properties is not matched : " + browserName);
 	}
@@ -71,12 +83,6 @@ public class ConfigFileReader {
 		String windowSize = properties.getProperty("windowMaximize");
 		if(windowSize != null) return Boolean.valueOf(windowSize);
 		return true;
-	}
-	
-	public String getReportConfigPath(){
-		String reportConfigPath = properties.getProperty("reportConfigPath");
-		if(reportConfigPath!= null) return reportConfigPath;
-		else throw new RuntimeException("Report Config Path not specified in the Configuration.properties file for the Key:reportConfigPath");		
 	}
 
 }

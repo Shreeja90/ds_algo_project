@@ -18,8 +18,8 @@ import managers.FileReaderManager;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "/Users/shreeeja/eclipse-workspace/Ds_algo/src/main/resources/featureFiles", tags = "@Smoke",
-				glue= {"stepDefinition"},
+		features = "C:\\Users\\rishj\\git\\ds_algo_project\\src\\main\\resources\\featureFiles", tags = "@Smoke",
+				glue= {"StepDefinitions"},
 				dryRun = false,
 				monochrome = true, 
 				plugin = {"pretty", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"})

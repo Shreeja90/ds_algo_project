@@ -1,16 +1,15 @@
 package managers;
- 
+
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 import enums.DriverType;
 import enums.EnvironmentType;
-import io.cucumber.java.After;
  
 public class WebDriverManager {
 	private WebDriver driver;
@@ -21,7 +20,9 @@ public class WebDriverManager {
 	public WebDriverManager() {
 		
 		driverType = FileReaderManager.getInstance().getConfigReader().getBrowser();
+		System.out.println(driverType);
 		environmentType = FileReaderManager.getInstance().getConfigReader().getEnvironment();
+		System.out.println(environmentType);
 	}
  
 	public WebDriver getDriver() {
@@ -45,7 +46,8 @@ public class WebDriverManager {
  
 	private WebDriver createLocalDriver() {
         switch (driverType) {	    
-        case FIREFOX : driver = new FirefoxDriver();
+        case FIREFOX : 
+        	driver = new FirefoxDriver();
 	    	break;
         case CHROME : 
         	System.setProperty(CHROME_DRIVER_PROPERTY, FileReaderManager.getInstance().getConfigReader().getDriverPath());
@@ -53,7 +55,8 @@ public class WebDriverManager {
     		break;
         case SAFARI : driver = new SafariDriver();
     		break;
-        case INTERNETEXPLORER : driver = new InternetExplorerDriver();
+        case MSEDGEDRIVER : 
+        	driver = new EdgeDriver();
     		break;
         }
  
@@ -63,9 +66,11 @@ public class WebDriverManager {
 		return driver;
 	}	
  
+	
+
 	public void closeDriver() {
 		driver.close();
-		//driver.quit();
+		driver.quit();
 	}	
  
 }

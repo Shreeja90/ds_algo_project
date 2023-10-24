@@ -1,4 +1,4 @@
-package stepDefinition;
+package StepDefinitions;
 
 import java.io.ByteArrayInputStream;
 

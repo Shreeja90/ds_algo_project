@@ -26,11 +26,5 @@ public class Homepage {
    public void clickGetStarted() {
 	getStarted.click();
 }
-   @FindBy(xpath="//a[text()='Data Structures']")
-   WebElement dataStructures;
-   
-   public void clickDataStructures() {
-	   dataStructures.click();
-   }
    
 }
