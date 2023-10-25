@@ -18,7 +18,7 @@ import managers.FileReaderManager;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "/Users/shreeeja/eclipse-workspace/Ds_algo/src/main/resources/featureFiles", tags = "@Smoke",
+		features = "/Users/shreeeja/eclipse-workspace/Ds_algo/src/main/resources/featureFiles", tags = "@Dropdown",
 				glue= {"stepDefinition"},
 				dryRun = false,
 				monochrome = true, 

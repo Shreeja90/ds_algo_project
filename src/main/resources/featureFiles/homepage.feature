@@ -1,6 +1,7 @@
 Feature: Ds_Algo
 
-  Scenario: Checking Get Started link
+@Home
+  Scenario: TC01 - Checking Get Started link
     Given The user opens DS Algo portal link
     When The user clicks the "Get Started" button
     And Validate the user is on Home page

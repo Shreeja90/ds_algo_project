@@ -2,6 +2,7 @@ package managers;
   
 import org.openqa.selenium.WebDriver;
 
+import Pages.DataStructureDropdown;
 import Pages.Homepage;
 
 
@@ -14,6 +15,7 @@ public class PageObjectManager {
 	//private AddToCartPage addToCartPage;
  
 	private Homepage homePage;
+	private DataStructureDropdown dataStructureDropdown;
  
 	//private CheckOutPage checkoutPage;
 	
@@ -31,10 +33,12 @@ public class PageObjectManager {
 	public Homepage getHomePage(){
 
 		return (homePage == null) ? homePage = new Homepage(driver) : homePage;
-
 	}
  
-	
+	public DataStructureDropdown getDataStructureDropdown() {
+		return (dataStructureDropdown == null) ? dataStructureDropdown = new DataStructureDropdown(driver) : dataStructureDropdown;
+		
+	}
  
 	//public ProductsPage getProductListingPage() {
  
