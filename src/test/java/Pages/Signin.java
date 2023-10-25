@@ -19,6 +19,10 @@ public class Signin {
 		
 	}
 	
+	@FindBy(xpath="//*[@id=\"navbarCollapse\"]/div[2]/ul/a[3]")
+	WebElement signinbtn;
+	
+	
 	@FindBy(xpath = "/html/body/div[2]/div/div[2]/form/input[4]")
 	WebElement loginbtn;
 	
@@ -30,6 +34,11 @@ public class Signin {
 	
 	@FindBy(xpath ="/html/body/div[2]")
 	WebElement successsignin;
+	
+	
+	public void clickSignin() {
+		signinbtn.click();
+	}
 	
 	
 		public void entercredentials(String username, String password1) {
