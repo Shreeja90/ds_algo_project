@@ -58,7 +58,7 @@ public class ConfigFileReader {
 	}
 	
 	public String getSigninpageURL() {
-		String url2 = properties.getProperty("URL2");
+		String url2 = properties.getProperty("URL");
 		if(url2 != null) return url2;
 		else throw new RuntimeException("URL not specified in the Configuration.properties file.");
 	}
