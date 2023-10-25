@@ -9,4 +9,4 @@ Then User is navigated to inside account page
 
 Examples:
 | username | password1 |
-|Tester_user63 | ds_algo123 |
+| Tester_user63 | ds_algo123 |
