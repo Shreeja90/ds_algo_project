@@ -18,7 +18,7 @@ import managers.FileReaderManager;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "C:\\Users\\rishj\\git\\ds_algo_project\\src\\main\\resources\\featureFiles", tags = "@Smoke",
+		features = "C:\\Users\\rishj\\git\\ds_algo_project\\src\\main\\resources\\featureFiles",
 				glue= {"StepDefinitions"},
 				dryRun = false,
 				monochrome = true, 
