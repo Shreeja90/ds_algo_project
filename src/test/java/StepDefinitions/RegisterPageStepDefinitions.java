@@ -6,23 +6,29 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import managers.PageObjectManager;
 import managers.WebDriverManager;
+import cucumber.TestContext;
 
 public class RegisterPageStepDefinitions {
-	WebDriver driver;
+
+	TestContext testContext;
+	//WebDriver driver;
 	Register registerPage;
-	WebDriverManager webDriverManager;
-	PageObjectManager pageObjectManager;
-	
+	//WebDriverManager webDriverManager;
+	//PageObjectManager pageObjectManager;
+	public RegisterPageStepDefinitions(TestContext context) {
+		testContext = context;
+		registerPage = testContext.getPageObjectManager().getRegisterPage();
+	}
 	
 
 
 @Given("User is on DSAlgo Registration page")
 public void user_is_on_ds_algo_registration_page() {
 	
-	webDriverManager = new WebDriverManager();
-	driver = webDriverManager.getDriver();
-	pageObjectManager = new PageObjectManager(driver);
-	registerPage = pageObjectManager.getRegisterPage();
+	//webDriverManager = new WebDriverManager();
+	//driver = webDriverManager.getDriver();
+	//pageObjectManager = new PageObjectManager(driver);
+	//registerPage = pageObjectManager.getRegisterPage();
 	registerPage.navigateTo_RegisterPage();
 	
 }
