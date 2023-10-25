@@ -35,12 +35,12 @@ public class Hooks {
 	@After
 	public void AfterSteps(Scenario scenario) {
 		
-		if(scenario.isFailed()) {
+		/*if(scenario.isFailed()) {
 			byte[] screenshot = ((TakesScreenshot)testContext.getWebDriverManager()).getScreenshotAs(OutputType.BYTES);
 			Allure.addAttachment("Failed Screenshot", new ByteArrayInputStream(screenshot));
 		}
 			
-		testContext.getWebDriverManager().closeDriver();
+		testContext.getWebDriverManager().closeDriver();*/
 	}
 
 }
