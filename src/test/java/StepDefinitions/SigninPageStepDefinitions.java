@@ -35,7 +35,7 @@ public class SigninPageStepDefinitions {
 		//driver = webDriverManager.getDriver();
 		//pageObjectManager = new PageObjectManager(driver);
 		//signinPage = pageObjectManager.getSigninPage();
-		signinPage.navigateTo_Signinpage();
+		//signinPage.navigateTo_Signinpage();
 	}
 	
 	
