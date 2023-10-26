@@ -14,10 +14,10 @@ public class Signin {
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void navigateTo_Signinpage() {
+	/*public void navigateTo_Signinpage() {
 		driver.get(FileReaderManager.getInstance().getConfigReader().getSigninpageURL());
 		
-	}
+	}*/
 	
 	@FindBy(xpath="//*[@id=\"navbarCollapse\"]/div[2]/ul/a[3]")
 	WebElement signinbtn;
