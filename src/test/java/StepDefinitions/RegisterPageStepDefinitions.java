@@ -9,20 +9,21 @@ import managers.WebDriverManager;
 import cucumber.TestContext;
 
 public class RegisterPageStepDefinitions {
-
 	TestContext testContext;
+	
 	//WebDriver driver;
 	Register registerPage;
+	
 	//WebDriverManager webDriverManager;
 	//PageObjectManager pageObjectManager;
+	
 	public RegisterPageStepDefinitions(TestContext context) {
 		testContext = context;
 		registerPage = testContext.getPageObjectManager().getRegisterPage();
 	}
-	
 
 
-@Given("User is on DSAlgo Registration page")
+/*@Given("User is on DSAlgo Registration page")
 public void user_is_on_ds_algo_registration_page() {
 	
 	//webDriverManager = new WebDriverManager();
@@ -31,7 +32,7 @@ public void user_is_on_ds_algo_registration_page() {
 	//registerPage = pageObjectManager.getRegisterPage();
 	registerPage.navigateTo_RegisterPage();
 	
-}
+}*/
 
 @When("User clicks on Register button")
 public void user_clicks_on_register_button() {
