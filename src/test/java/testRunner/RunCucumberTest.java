@@ -18,7 +18,7 @@ import managers.FileReaderManager;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "/Users/shreeeja/eclipse-workspace/Ds_algo/src/main/resources/featureFiles", tags = "@Smoke",
+		features = "src/main/resources/featureFiles", tags = "@SignIn",
 				glue= {"stepDefinition"},
 				dryRun = false,
 				monochrome = true, 

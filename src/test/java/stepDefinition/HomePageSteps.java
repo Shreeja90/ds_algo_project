@@ -49,14 +49,7 @@ public class HomePageSteps {
     	//testContext.getWebDriverManager().closeDriver();
     	
     }
-    @When("The user clicks \"Data Structures\" drop down")
-    public void Clickdata_structures() {
-    	homePage.clickDataStructures();
-    	}
-    @Then("I should see 6 different data structure entries in that dropdown")
-    public void dropdownDataStructures() {
-    	
-    }
+   
     
 }
 

@@ -13,8 +13,10 @@ import enums.EnvironmentType;
 public class ConfigFileReader {
 	
 	private Properties properties;
-	private final String propertyFilePath= "/Users/shreeeja/eclipse-workspace/Dsalgo/Configuration.properties";
-
+	//private final String propertyFilePath= "/Users/shreeeja/eclipse-workspace/Dsalgo/Configuration.properties";
+	//ConfigFileReader.java changes:
+	public static String dir = System.getProperty("user.dir");
+	private final String propertyFilePath= dir+ "/Configuration.properties";
 	
 	public ConfigFileReader(){
 		BufferedReader reader;
@@ -33,8 +35,14 @@ public class ConfigFileReader {
 		}		
 	}
 	
-	public String getDriverPath(){
-		String driverPath = properties.getProperty("driverPath");
+	public String getDriverPathFF(){
+		String driverPath = properties.getProperty("driverPathFF");
+		if(driverPath!= null) return driverPath;
+		else throw new RuntimeException("driverPath not specified in the Configuration.properties file.");		
+	}
+	
+	public String getDriverPathChrome(){
+		String driverPath = properties.getProperty("driverPathChrome");
 		if(driverPath!= null) return driverPath;
 		else throw new RuntimeException("driverPath not specified in the Configuration.properties file.");		
 	}
