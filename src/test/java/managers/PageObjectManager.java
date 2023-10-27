@@ -2,7 +2,10 @@ package managers;
   
 import org.openqa.selenium.WebDriver;
 
+import Pages.DataStructureDropdown;
 import Pages.Homepage;
+import Pages.RegisterPage;
+import Pages.SigninPage;
 
 
 public class PageObjectManager {
@@ -14,7 +17,9 @@ public class PageObjectManager {
 	//private AddToCartPage addToCartPage;
  
 	private Homepage homePage;
- 
+	private DataStructureDropdown dataStructureDropdown;
+	private  RegisterPage registerPage;
+	private SigninPage signinPage;
 	//private CheckOutPage checkoutPage;
 	
 	//private LoginPage loginPage;
@@ -31,11 +36,21 @@ public class PageObjectManager {
 	public Homepage getHomePage(){
 
 		return (homePage == null) ? homePage = new Homepage(driver) : homePage;
-
 	}
  
-	
- 
+	public DataStructureDropdown getDataStructureDropdown() {
+		return (dataStructureDropdown == null) ? dataStructureDropdown = new DataStructureDropdown(driver) : dataStructureDropdown;
+		
+	}
+    
+	public RegisterPage getRegisterPage() {
+		return (registerPage  == null) ? registerPage = new RegisterPage(driver) : registerPage;
+		
+	}
+	public SigninPage signinPage() {
+		return (signinPage  == null) ? signinPage = new SigninPage(driver) : signinPage;
+		
+	}
 	//public ProductsPage getProductListingPage() {
  
 		//return (productsPage == null) ? productsPage = new ProductsPage(driver) : productsPage;
