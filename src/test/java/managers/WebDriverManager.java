@@ -56,7 +56,10 @@ public class WebDriverManager {
         case CHROME : 
         	path = FileReaderManager.getInstance().getConfigReader().getDriverPathChrome();
         	path = dir+path;
-        	System.setProperty(CHROME_DRIVER_PROPERTY, path);
+        	//WebDriverManager.chromedriver().clearDriverCache().setup();
+
+			//WebDriverManager.chromedriver().clearResolutionCache().setup();
+            System.setProperty(CHROME_DRIVER_PROPERTY, path);
         	driver = new ChromeDriver();
     		break;
         case SAFARI : driver = new SafariDriver();
