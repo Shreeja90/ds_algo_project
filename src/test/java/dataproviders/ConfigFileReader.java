@@ -61,10 +61,10 @@ public class ConfigFileReader {
 	
 	public DriverType getBrowser() {
 		String browserName = properties.getProperty("browser");
-		if(browserName == null || browserName.equals("chrome")) return DriverType.CHROME;
+		if(browserName == null || browserName.equalsIgnoreCase("chrome")) return DriverType.CHROME;
 		else if(browserName.equalsIgnoreCase("firefox")) return DriverType.FIREFOX;
-		else if(browserName.equals("iexplorer")) return DriverType.INTERNETEXPLORER;
-		else if(browserName.equals("safari")) return DriverType.SAFARI;
+		else if(browserName.equalsIgnoreCase("iexplorer")) return DriverType.INTERNETEXPLORER;
+		else if(browserName.equalsIgnoreCase("safari")) return DriverType.SAFARI;
 		else throw new RuntimeException("Browser Name Key value in Configuration.properties is not matched : " + browserName);
 	}
 

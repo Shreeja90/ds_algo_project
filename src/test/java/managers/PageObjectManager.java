@@ -6,6 +6,7 @@ import Pages.DataStructureDropdown;
 import Pages.Homepage;
 import Pages.RegisterPage;
 import Pages.SigninPage;
+import Pages.LinkedList;
 
 
 public class PageObjectManager {
@@ -20,6 +21,7 @@ public class PageObjectManager {
 	private DataStructureDropdown dataStructureDropdown;
 	private  RegisterPage registerPage;
 	private SigninPage signinPage;
+	private LinkedList linkedList;
 	//private CheckOutPage checkoutPage;
 	
 	//private LoginPage loginPage;
@@ -51,6 +53,12 @@ public class PageObjectManager {
 		return (signinPage  == null) ? signinPage = new SigninPage(driver) : signinPage;
 		
 	}
+	
+	public LinkedList getLinkedlist() {
+		return (linkedList  == null) ? linkedList = new LinkedList(driver) : linkedList;
+		
+	}
+	
 	//public ProductsPage getProductListingPage() {
  
 		//return (productsPage == null) ? productsPage = new ProductsPage(driver) : productsPage;
