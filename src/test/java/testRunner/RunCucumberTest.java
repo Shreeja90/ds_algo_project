@@ -18,7 +18,7 @@ import managers.FileReaderManager;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/main/resources/featureFiles", tags = "@SignIn or @LinkedList",
+		features = "src/main/resources/featureFiles", tags = "@SignIn or @LinkedList or @Graph",
 				glue= {"stepDefinition"},
 				dryRun = false,
 				monochrome = true, 
@@ -26,6 +26,7 @@ import managers.FileReaderManager;
 
 public class RunCucumberTest {
 
+	//tags = "@SignIn or @LinkedList or @Graph"
 
 }
 	

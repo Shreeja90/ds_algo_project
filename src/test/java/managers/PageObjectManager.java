@@ -3,6 +3,7 @@ package managers;
 import org.openqa.selenium.WebDriver;
 
 import Pages.DataStructureDropdown;
+import Pages.GraphPage;
 import Pages.Homepage;
 import Pages.RegisterPage;
 import Pages.SigninPage;
@@ -22,6 +23,7 @@ public class PageObjectManager {
 	private  RegisterPage registerPage;
 	private SigninPage signinPage;
 	private LinkedList linkedList;
+	private GraphPage graphPage;
 	//private CheckOutPage checkoutPage;
 	
 	//private LoginPage loginPage;
@@ -58,6 +60,10 @@ public class PageObjectManager {
 		return (linkedList  == null) ? linkedList = new LinkedList(driver) : linkedList;
 		
 	}
+	public GraphPage getGraphPage() {
+		return (graphPage == null) ? graphPage = new GraphPage(driver) : graphPage;
+	}
+	
 	
 	//public ProductsPage getProductListingPage() {
  
