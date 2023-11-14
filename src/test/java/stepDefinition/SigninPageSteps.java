@@ -1,12 +1,17 @@
 package stepDefinition;
 
+import java.util.List;
+import java.util.Map;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Pages.SigninPage;
 import cucumber.TestContext;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class SigninPageSteps {
 	
@@ -34,6 +39,18 @@ public class SigninPageSteps {
 	{
 		signinPage.enterUserName(username);
 	    signinPage.enterPassword(password1);
+	}
+	
+	@When("User enter valid credentials")
+	public void enterLoginDetails(DataTable table) 
+	{
+		
+	    List<Map<String, String>> rows = table.asMaps(String.class, String.class);
+	    for (Map<String, String> columns : rows) {   
+			signinPage.enterUserName(columns.get("username"));
+		    signinPage.enterPassword(columns.get("password"));
+	    }
+	  
 	}
 	
 	@And("User clicks sign in")

@@ -73,6 +73,8 @@ public class WebDriverManager {
         
 		return driver;
 	}	
+	
+	
  
 	public void closeDriver() {
 		driver.close();

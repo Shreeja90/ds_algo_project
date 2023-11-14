@@ -5,6 +5,7 @@ import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -24,7 +25,7 @@ public class TreePage {
 		public TreePage (WebDriver driver) {
 			this.driver = driver;
 			PageFactory.initElements(driver, this);
-			this.wait = new WebDriverWait(driver, (Duration.ofSeconds(60)));
+			this.wait = new WebDriverWait(driver, (Duration.ofSeconds(50)));
 			this.actions = new Actions(driver);
 		}
 		
@@ -46,13 +47,19 @@ public class TreePage {
 			driver.navigate().to((FileReaderManager.getInstance().getConfigReader().getApplicationUrl()+"tree/overview-of-trees/"));
 		}
 
-		
+		////a[contains (text(),'Practice Questions')]
 		public void goToTreeLink(String testlink) {
 			String locatorLink= "//a[contains(text(),'"+testlink+"')]";
 			WebElement locatorLinkTree = driver.findElement(By.xpath(locatorLink));
+			try {
 			wait.until(ExpectedConditions.visibilityOf(locatorLinkTree));
 			locatorLinkTree.click();
-				
+			}
+	        catch (NoSuchElementException e) 
+	        {
+	        	e.printStackTrace();
+	        	throw new AssertionError("Test Case Failed" + e.getMessage());
+	        }
 		}
 		
 		public void validateTreeLink(String testlink) {
@@ -64,7 +71,7 @@ public class TreePage {
 				
 		}
 		
-		@FindBy(xpath="//a[text()='Try here>>>']")
+		@FindBy(xpath="//a[@href='/tryEditor']")
 		WebElement tryHere;
 		
 		public void goToTryHereButton() {
@@ -90,6 +97,12 @@ public class TreePage {
 			runButton.click();
 		}
 		
+		@FindBy(xpath="//a[contains (text(),'Practice Questions')]")
+		WebElement practiceQuestionsButton;
+		
+		public void clickPracticeQuestionsButton() {
+			practiceQuestionsButton.click();
+		}
 		
 		
 }
