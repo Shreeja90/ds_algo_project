@@ -2,6 +2,8 @@ package stepDefinition;
 
 import java.io.ByteArrayInputStream;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
@@ -13,8 +15,11 @@ import io.qameta.allure.Allure;
 
 
 public class Hooks {
+	
+	Logger logger = LogManager.getLogger(Hooks.class);
 
 	TestContext testContext;
+	//Homepage homePage;
 
 	public Hooks(TestContext context) {
 		testContext = context;
@@ -22,25 +27,35 @@ public class Hooks {
 
 	@Before
 	public void BeforeSteps() {
-		/*What all you can perform here
-			Starting a webdriver
-			Setting up DB connections
-			Setting up test data
-			Setting up browser cookies
-			Navigating to certain page
-			or anything before the test
-		*/
+		//homePage.navigateTo_HomePage();
+		//homePage.clickGetStarted();
+		logger.info("Started TEST Execution");
+		
 	}
 
 	@After
 	public void AfterSteps(Scenario scenario) {
 		
+		try {
 		if(scenario.isFailed()) {
-			byte[] screenshot = ((TakesScreenshot)testContext.getWebDriverManager()).getScreenshotAs(OutputType.BYTES);
+			byte[] screenshot = ((TakesScreenshot) testContext.getWebDriverManager().getDriver()).getScreenshotAs(OutputType.BYTES);
 			Allure.addAttachment("Failed Screenshot", new ByteArrayInputStream(screenshot));
-		}
+			testContext.getWebDriverManager().closeDriver();
+            //byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+            //scenario.attach(screenshot, "image/png", "Screenshot");
 			
-		testContext.getWebDriverManager().closeDriver();
+		}
+		else {
+			
+			testContext.getWebDriverManager().closeDriver();
+		}
+		}
+		catch (Exception e)
+		{		
+			e.printStackTrace();
+			testContext.getWebDriverManager().closeDriver();
+		
+		}
+		
 	}
-
 }

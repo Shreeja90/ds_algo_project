@@ -4,6 +4,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
@@ -18,6 +19,7 @@ public class WebDriverManager {
 	private static EnvironmentType environmentType;
 	private static final String CHROME_DRIVER_PROPERTY = "webdriver.chrome.driver";
 	private static final String FF_DRIVER_PROPERTY = "webdriver.firefox.driver";
+	private static final String EDGE_DRIVER_PROPERTY = "webdriver.msedge.driver";
 	private static String dir = System.getProperty("user.dir");
  
 	public WebDriverManager() {
@@ -56,12 +58,19 @@ public class WebDriverManager {
         case CHROME : 
         	path = FileReaderManager.getInstance().getConfigReader().getDriverPathChrome();
         	path = dir+path;
-        	System.setProperty(CHROME_DRIVER_PROPERTY, path);
+        	//WebDriverManager.chromedriver().clearDriverCache().setup();
+
+			//WebDriverManager.chromedriver().clearResolutionCache().setup();
+            System.setProperty(CHROME_DRIVER_PROPERTY, path);
         	driver = new ChromeDriver();
     		break;
         case SAFARI : driver = new SafariDriver();
     		break;
-        case INTERNETEXPLORER : driver = new InternetExplorerDriver();
+        case EDGE : 
+        	path = FileReaderManager.getInstance().getConfigReader().getDriverPathEdge();
+        	path = dir+path;
+        	System.setProperty(EDGE_DRIVER_PROPERTY, path);
+        	driver = new EdgeDriver();
     		break;
         }
  
@@ -70,6 +79,8 @@ public class WebDriverManager {
         
 		return driver;
 	}	
+	
+	
  
 	public void closeDriver() {
 		driver.close();
