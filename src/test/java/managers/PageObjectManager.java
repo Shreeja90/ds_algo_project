@@ -2,7 +2,9 @@ package managers;
   
 import org.openqa.selenium.WebDriver;
 
+import Pages.ArrayPage;
 import Pages.DataStructureDropdown;
+import Pages.DatastructuresPage;
 import Pages.GraphPage;
 import Pages.Homepage;
 import Pages.RegisterPage;
@@ -21,6 +23,8 @@ public class PageObjectManager {
   private LinkedList linkedList;
 	private GraphPage graphPage;
   private TreePage treePage;
+  private DatastructuresPage datastructurePage;
+  private ArrayPage arrayPage;
 
 	
 public PageObjectManager(WebDriver driver) {
@@ -59,6 +63,14 @@ public PageObjectManager(WebDriver driver) {
 	public TreePage treePage() {
 		return (treePage  == null) ? treePage = new TreePage(driver) : treePage;
 		
+	}
+	
+	public ArrayPage getArrayPage() {
+		return(arrayPage == null)?  arrayPage = new ArrayPage(driver) : arrayPage;
+	}
+	
+	public DatastructuresPage getdatastructurespage() {
+		return(datastructurePage == null)?  datastructurePage = new DatastructuresPage(driver) : datastructurePage;
 	}
 
 }

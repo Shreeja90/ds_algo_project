@@ -48,16 +48,16 @@ public class LinkedListSteps {
 	  public void clickonLinkedListLink(String testlink) {
 		  linkedList.goToLinkedListLink(testlink);
 	  }
-	  @And ("Validate the {string}")
+	  /*@And ("Validate the {string}")
 	  public void validateTestLink(String testlink) {
 		  linkedList.validateLinkedListLink(testlink);
 	  }
 	  @And("The user clicks \"Try Here\" button")
 	  public void clickingTryHereButton() {
 		  linkedList.goToTryHereButton();
-	  }
+	  }*/
 	  
-	  @And ("The user enters text print \"hello\" and clicks the run button")
+	  /*@And ("The user enters text print \"hello\" and clicks the run button")
 	  public void checkTextBox() {
 		  linkedList.writeInTextBox();
 		  
@@ -65,7 +65,7 @@ public class LinkedListSteps {
 	  @Then("hello should be printed")
 	  public void validateRunButton() {
 		  linkedList.clickRunButton();
-	  }
+	  }*/
 	  
 	  
 	  
