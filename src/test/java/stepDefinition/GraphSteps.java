@@ -39,6 +39,7 @@ public class GraphSteps {
 	
 	  @And ("The user should be directed to \"Graph\" Page")
 	  public void GraphPaneIsOpen() {
+		  logger.info(" GraphPaneIsOpen called ");
 		  graphPage.validateGraphTitle();
 	  }
 	 
@@ -51,6 +52,7 @@ public class GraphSteps {
 	  
 	  @And ("Click on the Graph links {string}")
 	  public void clickonGraphLink(String testlink) {
+		  logger.info(" clickonGraphLink called ");
 		  graphPage.goToGraphLink(testlink);
 	  }
 
