@@ -2,9 +2,12 @@ package managers;
 
 import org.openqa.selenium.WebDriver;
 
+import Pages.ArrayPage;
+import Pages.DataStructureDropdown;
 import Pages.Homepage;
-import Pages.Register;
-import Pages.Signin;
+import Pages.RegisterPage;
+import Pages.SigninPage;
+import Pages.DatastructuresPage;
 
 
 public class PageObjectManager {
@@ -21,11 +24,17 @@ public class PageObjectManager {
 	
 	//private LoginPage loginPage;
 	
-	private Register registerPage;
+	private RegisterPage registerPage;
+	
+	private DataStructureDropdown dataStructureDropdown;
+	
+	private SigninPage signinPage;
+	
+	private DatastructuresPage datastructurePage;
+	
+	private ArrayPage arrayPage;
 	
 	
-	private Signin signinPage;
-
  
 	
  
@@ -41,13 +50,28 @@ public class PageObjectManager {
 
 	}
 	
-	public Register getRegisterPage() {
-		
-		return (registerPage == null)? registerPage = new Register(driver): registerPage;
+	public DataStructureDropdown getDataStructureDropdown() {
+		return (dataStructureDropdown == null) ? dataStructureDropdown = new DataStructureDropdown(driver) : dataStructureDropdown;
 		
 	}
 	
-	public Signin getSigninPage() {
-		return(signinPage == null)? signinPage = new Signin(driver): signinPage;
+	public RegisterPage getRegisterPage() {
+		
+		return (registerPage == null)? registerPage = new RegisterPage(driver): registerPage;
+		
 	}
+	
+	public SigninPage signinPage() {
+		return (signinPage  == null) ? signinPage = new SigninPage(driver) : signinPage;
+		
+	}
+	
+	public DatastructuresPage getdatastructurespage() {
+		return(datastructurePage == null)?  datastructurePage = new DatastructuresPage(driver) : datastructurePage;
+	}
+	
+	public ArrayPage getArrayPage() {
+		return(arrayPage == null)?  arrayPage = new ArrayPage(driver) : arrayPage;
+	}
+	
 }

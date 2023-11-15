@@ -1,0 +1,9 @@
+21:35:35.792 [main] INFO  stepDefinition.Hooks - Started TEST Execution
+21:35:43.493 [main] INFO  stepDefinition.DatastructurePageSteps - User is navigated to the home page
+21:35:44.014 [main] INFO  stepDefinition.DatastructurePageSteps - User successfully clicked get started button
+21:35:44.065 [main] INFO  stepDefinition.DatastructurePageSteps - User successfully scrolls down to view time complexity link
+21:35:44.804 [main] INFO  stepDefinition.DatastructurePageSteps - User successfully clicked time complexity link
+21:35:44.876 [main] INFO  stepDefinition.DatastructurePageSteps - User successfully redirected to practice questions page
+21:35:45.420 [main] INFO  stepDefinition.DatastructurePageSteps - User successfully clicked practice questions link
+21:35:45.515 [main] INFO  stepDefinition.DatastructurePageSteps - User successfully navigates back to time complexity link
+21:35:47.266 [main] INFO  stepDefinition.DatastructurePageSteps - User successfully validated try here button

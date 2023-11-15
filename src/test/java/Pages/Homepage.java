@@ -25,6 +25,8 @@ public class Homepage {
 	
    public void clickGetStarted() {
 	getStarted.click();
+	
 }
+  
    
 }

@@ -11,8 +11,10 @@ import enums.EnvironmentType;
 
 public class ConfigFileReader {
 	
-	private Properties properties;
-	private final String propertyFilePath= "C:\\Users\\rishj\\git\\ds_algo_project\\src\\test\\java\\config\\Configuration.properties";
+	private static Properties properties;
+	//private final String propertyFilePath= "C:\\Users\\rishj\\git\\ds_algo_projectss\\src\\test\\java\\config\\Configuration.properties";
+	public static String dir = System.getProperty("user.dir");
+	private final String propertyFilePath= dir+ "/Configuration.properties";
 
 	
 	public ConfigFileReader(){
@@ -32,13 +34,38 @@ public class ConfigFileReader {
 		}		
 	}
 	
-	public String getDriverPath(){
-		String driverPath = properties.getProperty("driverPath");
+	public String getDriverPathChrome(){
+		String driverPath = properties.getProperty("driverPathchrome");
 		if(driverPath!= null) return driverPath;
 		else throw new RuntimeException("driver Path not specified in the Configuration.properties file.");		
 	}
 	
-	public long getImplicitlyWait() {		
+	public String getExcelFilePath() {
+		String excelFilePath = properties.getProperty("excelFilePath");
+		if(excelFilePath!= null)  return excelFilePath;
+		else throw new RuntimeException("excel file Path not specified in the Configuration.properties file.");	
+    }
+	
+	public String getSheetName() {
+		String sheetname = properties.getProperty("sheetName");
+		if(sheetname!=null) return sheetname;
+		else throw new RuntimeException("Sheet Name not specified in the Configuration.properties file.");
+        
+    }
+	
+	public String getDriverPathFF(){
+		String driverPath = properties.getProperty("driverPathFF");
+		if(driverPath!= null) return driverPath;
+		else throw new RuntimeException("driverPath not specified in the Configuration.properties file.");		
+	}
+	
+	public String getDriverPathEdge(){
+		String driverPath = properties.getProperty("driverPathedge");
+		if(driverPath!= null) return driverPath;
+		else throw new RuntimeException("driverPath not specified in the Configuration.properties file.");		
+	}
+	
+	public static long getImplicitlyWait() {		
 		String implicitlyWait = properties.getProperty("implicitlyWait");
 		if(implicitlyWait != null) return Long.parseLong(implicitlyWait);
 		else throw new RuntimeException("implicitlyWait not specified in the Configuration.properties file.");		
@@ -60,6 +87,12 @@ public class ConfigFileReader {
 	public String getSigninpageURL() {
 		String url2 = properties.getProperty("URL");
 		if(url2 != null) return url2;
+		else throw new RuntimeException("URL not specified in the Configuration.properties file.");
+	}
+	
+	public String getDatastructurepageURL() {
+		String url3 = properties.getProperty("URL");
+		if(url3 != null) return url3;
 		else throw new RuntimeException("URL not specified in the Configuration.properties file.");
 	}
 	

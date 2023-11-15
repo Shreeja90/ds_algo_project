@@ -1,15 +1,8 @@
 package testRunner;
-
-
-import java.io.File;
-
-import org.junit.AfterClass;
 import org.junit.runner.RunWith;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
-import managers.FileReaderManager;
-
 
 //@Suite
 //@IncludeEngines("cucumber")
@@ -18,15 +11,14 @@ import managers.FileReaderManager;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "C:\\Users\\rishj\\git\\ds_algo_project\\src\\main\\resources\\featureFiles",
-				glue= {"StepDefinitions"},
+		features = "src/main/resources/featureFiles",
+				glue= {"stepDefinition"},
 				dryRun = false,
 				monochrome = true, 
 				plugin = {"pretty", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"})
 
 public class RunCucumberTest {
-
-
+	 
 }
 	
 

@@ -4,5 +4,5 @@ public enum DriverType {
 	FIREFOX,
 	CHROME,
 	MSEDGEDRIVER,
-	SAFARI
+	SAFARI, 
 }
