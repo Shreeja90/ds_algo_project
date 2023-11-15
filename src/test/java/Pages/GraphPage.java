@@ -1,8 +1,7 @@
 package Pages;
+
 import java.time.Duration;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -14,36 +13,31 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import managers.FileReaderManager;
-import stepDefinition.LinkedListSteps;
-
-public class LinkedList {
-
+public class GraphPage {
 	WebDriver driver;
 	WebDriverWait wait;
 	Actions actions;
-	private static Logger logger = LogManager.getLogger(LinkedList.class);
 	JavascriptExecutor js = (JavascriptExecutor) driver;
-		public LinkedList (WebDriver driver) {
+		public GraphPage (WebDriver driver) {
 			this.driver = driver;
 			PageFactory.initElements(driver, this);
 			this.wait = new WebDriverWait(driver, (Duration.ofSeconds(60)));
 			this.actions = new Actions(driver);
 		}
 		
-		@FindBy(xpath="//a[@href='linked-list']")
-		WebElement LinkedListGetStartedButton;
+		@FindBy(xpath="//a[@href='graph']")
+		WebElement GraphGetStartedButton;
 		
-		public void clickLinkedListGetStartedButton() {
-			wait.until(ExpectedConditions.visibilityOf(LinkedListGetStartedButton));
-			LinkedListGetStartedButton.click();
+		public void clickGraphGetStartedButton() {
+			wait.until(ExpectedConditions.visibilityOf(GraphGetStartedButton));
+			GraphGetStartedButton.click();
 		}
 		
-		@FindBy(xpath="//h4[text()='Linked List']")
-		WebElement checkLinkedListTitle;
+		@FindBy(xpath="//h4[text()='Graph']")
+		WebElement checkGraphTitle;
 		
-		public void validateLinkedListTitle() {
-			checkLinkedListTitle.isDisplayed();
+		public void validateGraphTitle() {
+			checkGraphTitle.isDisplayed();
 		}
 		/*
 		 * public void navigateToIntroduction() {
@@ -51,18 +45,18 @@ public class LinkedList {
 		 * getApplicationUrl()+"linked-list/introduction/")); }
 		 */
 		
-		public void goToLinkedListLink(String testlink) {
-			String locatorLink= "//a[contains(text(),'"+testlink+"')]";
-			WebElement locatorLinkLinkedList = driver.findElement(By.xpath(locatorLink));
-			wait.until(ExpectedConditions.visibilityOf(locatorLinkLinkedList));
-			locatorLinkLinkedList.click();
+		public void goToGraphLink(String testlink) {
+			//String locatorLink= "//a[contains(text(),'"+testlink+"')]";	
+			// WebElement locatorLinkGraph = driver.findElement(By.xpath(locatorLink));
+			 WebElement locatorLinkGraph = driver.findElement(By.linkText(testlink));
+			 wait.until(ExpectedConditions.visibilityOf(locatorLinkGraph));
+			 locatorLinkGraph.click();
 				
 		}
-		
-		public void validateLinkedListLink(String testlink) {
+		public void validateGraphLink(String testlink) {
 			String locatorLink = "//p[contains(text(),'"+testlink+"')]";
-			WebElement locatorLinkLinkedList = driver.findElement(By.xpath(locatorLink));
-			wait.until(ExpectedConditions.visibilityOf(locatorLinkLinkedList));
+			WebElement locatorLinkGraph = driver.findElement(By.xpath(locatorLink));
+			wait.until(ExpectedConditions.visibilityOf(locatorLinkGraph));
 			
 			//driver.close();
 				
@@ -91,12 +85,10 @@ public class LinkedList {
 		WebElement runButton;
 		
 		public void clickRunButton() {
-			logger.info(" entered clickRunButton  ");
 			runButton.click();
 		}
 		
 		
 		
 }
-	
 

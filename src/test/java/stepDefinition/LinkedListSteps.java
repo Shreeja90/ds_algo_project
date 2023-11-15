@@ -2,6 +2,9 @@ package stepDefinition;
 
 
 import io.cucumber.java.en.And;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import Pages.LinkedList;
@@ -15,6 +18,7 @@ public class LinkedListSteps {
 	WebDriver driver;
 	LinkedList linkedList;
 	WebDriverWait wait;
+	private static Logger logger = LogManager.getLogger(LinkedListSteps.class);
 	
 	
 	public LinkedListSteps(TestContext context) {
@@ -29,6 +33,7 @@ public class LinkedListSteps {
 	
 	  @And ("The user should be directed to \"Linked List\" Page")
 	  public void LinkedListPaneIsOpen() {
+		  logger.info(" LinkedListPaneIsOpen called ");
 		  linkedList.validateLinkedListTitle();
 	  }
 	 
