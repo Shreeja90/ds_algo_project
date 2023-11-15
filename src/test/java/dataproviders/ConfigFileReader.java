@@ -98,5 +98,16 @@ public class ConfigFileReader {
 		if(reportConfigPath!= null) return reportConfigPath;
 		else throw new RuntimeException("Report Config Path not specified in the Configuration.properties file for the Key:reportConfigPath");		
 	}
+	public String getExcelFilePath() {
+		String excelFilePath = properties.getProperty("excelFilePath");
+		if(excelFilePath!= null)  return excelFilePath;
+		else throw new RuntimeException("excel file Path not specified in the Configuration.properties file.");	
+    }
+	public String getSheetName() {
+		String sheetname = properties.getProperty("sheetName");
+		if(sheetname!=null) return sheetname;
+		else throw new RuntimeException("Sheet Name not specified in the Configuration.properties file.");
+        
+    }
 
 }
