@@ -3,34 +3,27 @@ package managers;
 import org.openqa.selenium.WebDriver;
 
 import Pages.DataStructureDropdown;
+import Pages.GraphPage;
 import Pages.Homepage;
 import Pages.RegisterPage;
 import Pages.SigninPage;
+import Pages.LinkedList;
 import Pages.TreePage;
-
 
 
 public class PageObjectManager {
  
 	private WebDriver driver;
- 
-	//private ProductsPage productsPage;
- 
-	//private AddToCartPage addToCartPage;
- 
-	private Homepage homePage;
+  private Homepage homePage;
 	private DataStructureDropdown dataStructureDropdown;
 	private RegisterPage registerPage;
 	private SigninPage signinPage;
-	private TreePage treePage;
-	//private CheckOutPage checkoutPage;
-	
-	//private LoginPage loginPage;
+  private LinkedList linkedList;
+	private GraphPage graphPage;
+  private TreePage treePage;
 
- 
 	
- 
-	public PageObjectManager(WebDriver driver) {
+public PageObjectManager(WebDriver driver) {
  
 		this.driver = driver;
 	}
@@ -54,37 +47,18 @@ public class PageObjectManager {
 		return (signinPage  == null) ? signinPage = new SigninPage(driver) : signinPage;
 		
 	}
+
+	public LinkedList getLinkedlist() {
+		return (linkedList  == null) ? linkedList = new LinkedList(driver) : linkedList;
+		
+	}
+	public GraphPage getGraphPage() {
+		return (graphPage == null) ? graphPage = new GraphPage(driver) : graphPage;
+	}
+	
 	public TreePage treePage() {
 		return (treePage  == null) ? treePage = new TreePage(driver) : treePage;
 		
 	}
-	//public ProductsPage getProductListingPage() {
- 
-		//return (productsPage == null) ? productsPage = new ProductsPage(driver) : productsPage;
- 
-	//}
- 
-	
- 
-//	=public AddToCartPage getAddToCartPage() {
- 
-		//return (addToCartPage == null) ? addToCartPage = new AddToCartPage(driver) : addToCartPage;
- 
-	//}
- 
-	
- 
-	//public CheckOutPage getCheckoutPage() {
- 
-		//return (checkoutPage == null) ? checkoutPage = new CheckOutPage(driver) : checkoutPage;
- 
-	//}
-	
-	//public LoginPage getLoginPage() {
-		 
-		//return (loginPage == null) ? loginPage = new LoginPage(driver) : loginPage;
- 
-	//}
- 
-	
+
 }

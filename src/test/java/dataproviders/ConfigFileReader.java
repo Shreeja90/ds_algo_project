@@ -67,7 +67,7 @@ public class ConfigFileReader {
 	
 	public DriverType getBrowser() {
 		String browserName = properties.getProperty("browser");
-		if(browserName == null || browserName.equals("chrome")) return DriverType.CHROME;
+		if(browserName == null || browserName.equalsIgnoreCase("chrome")) return DriverType.CHROME;
 		else if(browserName.equalsIgnoreCase("firefox")) return DriverType.FIREFOX;
 		else if(browserName.equals("edge")) return DriverType.EDGE;
 		else if(browserName.equals("safari")) return DriverType.SAFARI;
