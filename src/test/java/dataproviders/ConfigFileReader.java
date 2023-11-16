@@ -47,6 +47,12 @@ public class ConfigFileReader {
 		else throw new RuntimeException("driverPath not specified in the Configuration.properties file.");		
 	}
 	
+	public String getDriverPathEdge(){
+		String driverPath = properties.getProperty("driverPathEdge");
+		if(driverPath!= null) return driverPath;
+		else throw new RuntimeException("driverPath not specified in the Configuration.properties file.");		
+	}
+	
 	public long getImplicitlyWait() {		
 		String implicitlyWait = properties.getProperty("implicitlyWait");
 		if(implicitlyWait != null) return Long.parseLong(implicitlyWait);
@@ -61,13 +67,19 @@ public class ConfigFileReader {
 	
 	public DriverType getBrowser() {
 		String browserName = properties.getProperty("browser");
-		if(browserName == null || browserName.equals("chrome")) return DriverType.CHROME;
+		if(browserName == null || browserName.equalsIgnoreCase("chrome")) return DriverType.CHROME;
 		else if(browserName.equalsIgnoreCase("firefox")) return DriverType.FIREFOX;
-		else if(browserName.equals("iexplorer")) return DriverType.INTERNETEXPLORER;
+		else if(browserName.equals("edge")) return DriverType.EDGE;
 		else if(browserName.equals("safari")) return DriverType.SAFARI;
 		else throw new RuntimeException("Browser Name Key value in Configuration.properties is not matched : " + browserName);
 	}
-
+	
+	public String getTestDataResourcePath(){
+		String testDataResourcePath = properties.getProperty("testDataResourcePath");
+		if(testDataResourcePath!= null) return testDataResourcePath;
+		else throw new RuntimeException("Test Data Resource Path not specified in the Configuration.properties file for the Key:testDataResourcePath");		
+	}
+	
 	public EnvironmentType getEnvironment() {
 		String environmentName = properties.getProperty("environment");
 		if(environmentName == null || environmentName.equalsIgnoreCase("local")) return EnvironmentType.LOCAL;
@@ -86,5 +98,16 @@ public class ConfigFileReader {
 		if(reportConfigPath!= null) return reportConfigPath;
 		else throw new RuntimeException("Report Config Path not specified in the Configuration.properties file for the Key:reportConfigPath");		
 	}
+	public String getExcelFilePath() {
+		String excelFilePath = properties.getProperty("excelFilePath");
+		if(excelFilePath!= null)  return excelFilePath;
+		else throw new RuntimeException("excel file Path not specified in the Configuration.properties file.");	
+    }
+	public String getSheetName() {
+		String sheetname = properties.getProperty("sheetName");
+		if(sheetname!=null) return sheetname;
+		else throw new RuntimeException("Sheet Name not specified in the Configuration.properties file.");
+        
+    }
 
 }
