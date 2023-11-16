@@ -9,7 +9,9 @@ import Pages.GraphPage;
 import Pages.Homepage;
 import Pages.RegisterPage;
 import Pages.SigninPage;
+import Pages.StackPage;
 import Pages.LinkedList;
+import Pages.QueuePage;
 import Pages.TreePage;
 
 
@@ -25,6 +27,8 @@ public class PageObjectManager {
   private TreePage treePage;
   private DatastructuresPage datastructurePage;
   private ArrayPage arrayPage;
+  private StackPage stackPage;
+  private QueuePage queuePage;
 
 	
 public PageObjectManager(WebDriver driver) {
@@ -72,5 +76,12 @@ public PageObjectManager(WebDriver driver) {
 	public DatastructuresPage getdatastructurespage() {
 		return(datastructurePage == null)?  datastructurePage = new DatastructuresPage(driver) : datastructurePage;
 	}
+	
+	public StackPage stackPage() {
+		return (stackPage  == null) ? stackPage = new StackPage(driver) : stackPage;
+	}
 
+	public QueuePage queuePage() {
+		return (queuePage  == null) ? queuePage = new QueuePage(driver) : queuePage;
+	}
 }
