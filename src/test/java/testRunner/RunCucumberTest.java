@@ -19,7 +19,7 @@ import managers.FileReaderManager;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 
-  features = "src/main/resources/featureFiles", tags = "@TreePage",
+  features = "src/main/resources/featureFiles", 
 
 				glue= {"stepDefinition"},
 				dryRun = false,

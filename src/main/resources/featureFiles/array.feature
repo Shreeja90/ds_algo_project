@@ -1,3 +1,6 @@
+
+@array
+
 Feature: Array page validations
 
   Scenario Outline: User is able to login to DSAlgo Portal and perform validations on Array page
