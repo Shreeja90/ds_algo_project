@@ -24,7 +24,7 @@ import managers.FileReaderManager;
 				glue= {"stepDefinition"},
 				dryRun = false,
 				monochrome = true, 
-				plugin = {"pretty", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"})
+				plugin = {"pretty", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
 
 public class RunCucumberTest {
 
