@@ -91,11 +91,11 @@ public class TreeSteps {
 	  public void validateRunButton() {
 		  treePage.clickRunButton();
 	  }
-	  @When("When User Clicks on Practice Questions")
+	  @When("User Clicks on Practice Questions")
 	  public void checkPracticeQuestions() {
 		  treePage.clickPracticeQuestionsButton();
 	  }
-	  @Then("Then User is navigated to Practice Questions Page")
+	  @Then("User is navigated to Practice Questions Page")
 	  public void validatePracticeQuestionsPage() {
 		  System.out.println("Im in Practice Questions Page");
 	  }

@@ -1,5 +1,5 @@
 
-@Test
+@Register
 Feature: Registration feature
   
 Scenario: To check registration feature

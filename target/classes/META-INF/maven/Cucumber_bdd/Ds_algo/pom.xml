@@ -63,6 +63,12 @@
     <version>3.0.0-alpha1</version>
 </dependency>
 
+<!-- https://mvnrepository.com/artifact/software.reinvent/headless-chrome -->
+<dependency>
+    <groupId>software.reinvent</groupId>
+    <artifactId>headless-chrome</artifactId>
+    <version>0.3.6</version>
+</dependency>
 
     <!-- ... (other dependencies) ... -->
    <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
@@ -111,6 +117,13 @@
     <groupId>org.apache.logging.log4j</groupId>
     <artifactId>log4j-api</artifactId>
     <version>2.20.0</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+<dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>7.8.0</version>
+    <scope>test</scope>
 </dependency>
 
 

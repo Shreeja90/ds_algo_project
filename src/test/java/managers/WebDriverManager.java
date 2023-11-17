@@ -4,14 +4,13 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 import enums.DriverType;
 import enums.EnvironmentType;
-import io.cucumber.java.After;
  
 public class WebDriverManager {
 	private WebDriver driver;
@@ -72,6 +71,14 @@ public class WebDriverManager {
         	System.setProperty(EDGE_DRIVER_PROPERTY, path);
         	driver = new EdgeDriver();
     		break;
+        case CHROMEHEADLESS : 
+        	path = FileReaderManager.getInstance().getConfigReader().getDriverPathChrome();
+        	path = dir+path;
+        	ChromeOptions chromeOptions = new ChromeOptions();
+    		chromeOptions.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200", "--ignore-certificate-errors");
+            System.setProperty(CHROME_DRIVER_PROPERTY, path);
+            driver = new ChromeDriver(chromeOptions);
+        	break;
         }
  
         if(FileReaderManager.getInstance().getConfigReader().getBrowserWindowSize()) driver.manage().window().maximize();
