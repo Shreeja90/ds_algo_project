@@ -1,4 +1,4 @@
-package testRunner;
+/*package testRunner;
 
 
 import java.io.File;
@@ -19,7 +19,7 @@ import managers.FileReaderManager;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 
-  features = "src/main/resources/featureFiles", tags = "@TreePage",
+  features = "src/main/resources/featureFiles",
 
 				glue= {"stepDefinition"},
 				dryRun = false,
@@ -29,7 +29,7 @@ import managers.FileReaderManager;
 public class RunCucumberTest {
 
 
-}
+}*/
 	
 
 

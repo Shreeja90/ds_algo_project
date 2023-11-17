@@ -71,6 +71,7 @@ public class ConfigFileReader {
 		else if(browserName.equalsIgnoreCase("firefox")) return DriverType.FIREFOX;
 		else if(browserName.equals("edge")) return DriverType.EDGE;
 		else if(browserName.equals("safari")) return DriverType.SAFARI;
+		else if(browserName.equals("chromeheadless"))return DriverType.CHROMEHEADLESS;
 		else throw new RuntimeException("Browser Name Key value in Configuration.properties is not matched : " + browserName);
 	}
 	
@@ -79,6 +80,13 @@ public class ConfigFileReader {
 		if(testDataResourcePath!= null) return testDataResourcePath;
 		else throw new RuntimeException("Test Data Resource Path not specified in the Configuration.properties file for the Key:testDataResourcePath");		
 	}
+	
+	public String getCSVFilepath() {
+		String csvFilePath = properties.getProperty("csvfilepath");
+		if(csvFilePath!=null) return csvFilePath;
+		else throw new RuntimeException("csvFilePath not specified in the Configuration.properties file.");
+        
+    }
 	
 	public EnvironmentType getEnvironment() {
 		String environmentName = properties.getProperty("environment");

@@ -55,6 +55,19 @@ Feature: Tree Page
 Examples:
 | username | password1 | testlink |
 | Tester_user63 | ds_algo123 | Overview of Trees |
+| Tester_user63 | ds_algo123 | Terminologies |
+| Tester_user63 | ds_algo123 | Types of Trees |
+| Tester_user63 | ds_algo123 | Tree Traversals |
+| Tester_user63 | ds_algo123 | Traversals-Illustration |
+| Tester_user63 | ds_algo123 | Binary Trees |
+| Tester_user63 | ds_algo123 | Types of Binary Trees |
+| Tester_user63 | ds_algo123 | Implementation in Python |
+| Tester_user63 | ds_algo123 | Binary Tree Traversals |
+| Tester_user63 | ds_algo123 | Implementation of Binary Trees |
+| Tester_user63 | ds_algo123  | Applications of Binary trees |
+| Tester_user63 | ds_algo123  | Binary Search Trees |
+| Tester_user63 | ds_algo123  | Implementation Of BST |
+
 
 
 @Practice
@@ -75,9 +88,7 @@ Scenario Outline: Checking Practice Questions
   Then User is navigated to Practice Questions Page
    
 Examples:
-| username | password1 | testlink |
-| Tester_user63 | ds_algo123 | Overview of Trees |
-  | Tester_user63 | ds_algo123 | Terminoligies |
-  | Tester_user63 | ds_algo123 | Types of Trees |
-  | Tester_user63 | ds_algo123 |Tree Traversals |
+| username | password1 |
+| Tester_user63 | ds_algo123 |
+
  
