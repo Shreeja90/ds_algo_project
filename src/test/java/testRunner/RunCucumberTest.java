@@ -1,4 +1,4 @@
-/*package testRunner;
+package testRunner;
 
 
 import java.io.File;
@@ -29,7 +29,7 @@ import managers.FileReaderManager;
 public class RunCucumberTest {
 
 
-}*/
+}
 	
 
 
