@@ -1,14 +1,10 @@
-/*package testRunner;
+package testRunner;
 
 
-import java.io.File;
-
-import org.junit.AfterClass;
 import org.junit.runner.RunWith;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
-import managers.FileReaderManager;
 
 
 //@Suite
@@ -20,7 +16,6 @@ import managers.FileReaderManager;
 @CucumberOptions(
 
   features = "src/main/resources/featureFiles",
-
 				glue= {"stepDefinition"},
 				dryRun = false,
 				monochrome = true, 
@@ -29,7 +24,7 @@ import managers.FileReaderManager;
 public class RunCucumberTest {
 
 
-}*/
+}
 	
 
 
