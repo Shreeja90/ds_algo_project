@@ -1,14 +1,8 @@
 package testRunner;
 
-
-import java.io.File;
-
-import org.junit.AfterClass;
 import org.junit.runner.RunWith;
-
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
-import managers.FileReaderManager;
 
 
 //@Suite
@@ -19,16 +13,16 @@ import managers.FileReaderManager;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 
-  features = "src/main/resources/featureFiles" , tags="not @Register",
+  features = "src/main/resources/featureFiles" , tags="@Practice",
 
 				glue= {"stepDefinition"},
 				dryRun = false,
 				monochrome = true, 
-				plugin = {"pretty", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
+				plugin = {"pretty", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm","html:target/cucumber.html"})
+
 
 public class RunCucumberTest {
-
-
+	
 }
 	
 
