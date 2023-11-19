@@ -13,7 +13,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 
-  features = "src/main/resources/featureFiles" , tags = "Not @Register",
+  features = "src/main/resources/featureFiles" , tags = "not @Register",
 				glue= {"stepDefinition"},
 				dryRun = false,
 				monochrome = true, 
