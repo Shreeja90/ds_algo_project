@@ -2,8 +2,7 @@
 log/
 *.log
 
-#Allure Results
-allure-results/
+
 
 # OS-specific files
 .DS_Store
