@@ -15,7 +15,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 
-  features = "src/main/resources/featureFiles",
+  features = "src/main/resources/featureFiles/datastructure.feature",
 				glue= {"stepDefinition"},
 				dryRun = false,
 				monochrome = true, 

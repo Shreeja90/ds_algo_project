@@ -130,9 +130,19 @@
     <artifactId>log4j-api</artifactId>
     <version>2.20.0</version>
 </dependency>
+<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-java-commons -->
+<dependency>
+    <groupId>io.qameta.allure</groupId>
+    <artifactId>allure-java-commons</artifactId>
+    <version>2.24.0</version>
+</dependency>
 
-
-
+<!-- https://mvnrepository.com/artifact/ru.yandex.qatools.allure/allure-cucumber-jvm-adaptor -->
+<dependency>
+    <groupId>ru.yandex.qatools.allure</groupId>
+    <artifactId>allure-cucumber-jvm-adaptor</artifactId>
+    <version>1.6.4</version>
+</dependency>
 
 
 </dependencies>
