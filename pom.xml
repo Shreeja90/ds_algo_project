@@ -136,6 +136,16 @@
     <artifactId>allure-java-commons</artifactId>
     <version>2.24.0</version>
 </dependency>
+<<<<<<< HEAD
+=======
+
+<!-- https://mvnrepository.com/artifact/ru.yandex.qatools.allure/allure-cucumber-jvm-adaptor -->
+<dependency>
+    <groupId>ru.yandex.qatools.allure</groupId>
+    <artifactId>allure-cucumber-jvm-adaptor</artifactId>
+    <version>1.6.4</version>
+</dependency>
+>>>>>>> 28d0b9633a5e8933b542b08ca0d070fa8b848acf
 
 <!-- https://mvnrepository.com/artifact/ru.yandex.qatools.allure/allure-cucumber-jvm-adaptor -->
 <dependency>
