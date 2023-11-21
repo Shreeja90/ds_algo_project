@@ -64,9 +64,9 @@ Examples:
 | Tester_user63 | ds_algo123 | Implementation in Python |
 | Tester_user63 | ds_algo123 | Binary Tree Traversals |
 | Tester_user63 | ds_algo123 | Implementation of Binary Trees |
-| Tester_user63 | ds_algo123  | Applications of Binary trees |
-| Tester_user63 | ds_algo123  | Binary Search Trees |
-| Tester_user63 | ds_algo123  | Implementation Of BST |
+| Tester_user63 | ds_algo123 | Applications of Binary trees |
+| Tester_user63 | ds_algo123 | Binary Search Trees |
+| Tester_user63 | ds_algo123 | Implementation Of BST |
 
 
 
