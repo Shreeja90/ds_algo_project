@@ -39,6 +39,8 @@ public class SigninPageSteps {
 	{
 		signinPage.enterUserName(username);
 	    signinPage.enterPassword(password1);
+	   // Username username = FileReaderManager.getInstance().getJsonReader().getUsername(username);
+			
 	}
 	
 	@When("User enter valid credentials")
