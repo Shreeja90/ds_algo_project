@@ -1,5 +1,6 @@
 # ds_algo_project
-Ds Algo project with cucumber BDD framework with junit test runner and allure reports using log4j for the logger.Step definition
+
+Ds Algo project is an educational domain project to study different data structure and Algorithms. We have used cucumber BDD framework with junit test runner and allure reports using log4j for the logger.
 
 The build tool we have used for the project is Maven , We have implemented POM and used Singleton design pattern of java to make sure that only one instance of the class is created and it has global access through out the framework. 
 
